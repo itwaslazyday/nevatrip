@@ -1,0 +1,32 @@
+.visually-hidden {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+
+  clip: rect(0 0 0 0);
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1920px;
+  padding: 0 60px;
+}
+
+@media (max-width: 600px) {
+  .container {
+    max-width: 600px;
+    padding: 0 30px;
+  }
+}
+
+.link-reset {
+  text-decoration: none;
+}
+
+.list-reset {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}

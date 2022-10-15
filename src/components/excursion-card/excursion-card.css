@@ -1,0 +1,50 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 341px;
+  border: 0.3px solid #828282;
+  border-radius: 16px;
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+
+.card__description {
+  padding: 0 12px 19px;
+}
+.card__image-link {
+  display: block;
+  position: relative;
+}
+
+.card__image-tip {
+  position: absolute;
+  top: 20%;
+  left: 0;
+}
+
+.card__about-button {
+  width: 165px;
+  background-color: var(--color-background-yellow);
+  border: 0.5px solid #CBA500;
+  border-radius: 20px;
+  padding: 12px;
+}
+
+.card__price-online {
+  font-size: 30px;
+  line-height: 20px;
+}
+
+.card__price-offline {
+  font-size: 10px;
+}
+
+.card__about-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card__price-online,
+.card__price-offline {
+  display: block;
+}
