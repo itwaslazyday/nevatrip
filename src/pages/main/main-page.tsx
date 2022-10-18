@@ -4,9 +4,12 @@ import {Card} from 'types/types';
 
 function Main (): JSX.Element {
   return (
-    <div className='card-list'>
-      {cards.map((card: Card) => <ExcursionCard key={card.id} card={card}/>)}
-    </div>
+    <section className='excursion-catalogue'>
+      <h2 className='visually-hidden'>Водные прогулки и экскурсии</h2>
+      <div className='card-list container'>
+        {cards.map((card: Card) => <ExcursionCard key={card.id} card={card}/>)}
+      </div>
+    </section>
   );
 }
 

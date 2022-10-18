@@ -4,9 +4,12 @@ type Card = {
   tipBackground: string;
   imageSrc: string;
   title: string;
-  features: string[],
-  priceOnline: number,
-  priceOffline: number
+  runtime: number;
+  features: string[];
+  nearestDate?: Date | undefined;
+  timeMarks?: string[],
+  priceOnline: number;
+  priceOffline?: number | string;
 };
 
 export type {Card};
