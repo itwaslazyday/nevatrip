@@ -47,8 +47,8 @@ function ExcursionCard ({card}: CardProps): JSX.Element {
                 {feature}
               </li>
             ))}
+            {timeMarks?.length && <AvailableDate nearestDate={nearestDate} timeMarks={timeMarks}/>}
           </ul>
-          {timeMarks?.length && <AvailableDate nearestDate={nearestDate} timeMarks={timeMarks}/>}
         </div>
         <div className="card__about-wrapper">
           <div className="card__price-wrapper">

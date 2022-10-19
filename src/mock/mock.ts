@@ -1,6 +1,8 @@
 import { Card } from 'types/types';
 
 const currentDate = new Date();
+const nextDate = new Date(currentDate);
+nextDate.setDate(currentDate.getDate() + 1);
 
 const cards: Card[] = [
   {
@@ -25,14 +27,14 @@ const cards: Card[] = [
     tipText: 'Круглый год',
     tipBackground: '#FED74B',
     imageSrc: 'img/excursions/02.jpeg',
-    title: 'Экскурсия по фортам Кронштадта',
+    title: 'Обзорная экскурсия по рекам и каналам Петербурга',
     runtime: 140,
     features: [
       'Билет на целый день',
       'Неограниченное число катаний',
       '6 остановок у главных достопримечательностей'
     ],
-    nearestDate: new Date(currentDate.setDate(currentDate.getDate() + 1)),
+    nearestDate: nextDate,
     timeMarks: ['12:00', '14:00', '16:00', '18:00', '20:00'],
     priceOnline: 850
   },
@@ -41,7 +43,7 @@ const cards: Card[] = [
     tipText: '',
     tipBackground: '',
     imageSrc: 'img/excursions/03.jpeg',
-    title: 'Экскурсия на теплоходе «Полуденный выстрел с Петропавловской крепости»',
+    title: 'Обзорная экскурсия по рекам и каналам Петербурга',
     runtime: 33,
     features: [
       'Билет на целый день',

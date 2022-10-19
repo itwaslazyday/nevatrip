@@ -1,16 +1,14 @@
 .visually-hidden {
   position: absolute;
-
   width: 1px;
   height: 1px;
   margin: -1px;
-
   clip: rect(0 0 0 0);
 }
 
 .container {
   margin: 0 auto;
-  max-width: var(--mobile-width);
+  max-width: 341px;
 }
 
 .link-reset {

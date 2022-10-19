@@ -25,10 +25,13 @@
   text-align: center;
 }
 
-.nearest__time-item--more {
+.nearest__more {
   border: none;
+  padding: 0;
   line-height: inherit;
   cursor: pointer;
+  background-color: inherit;
+  color: inherit;
 }
 .nearest__time-item--display {
   display: none;

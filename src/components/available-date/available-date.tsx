@@ -5,19 +5,25 @@ import isTomorrow from 'dayjs/plugin/isTomorrow';
 import { useState } from 'react';
 
 dayjs.extend(isToday);
+dayjs.extend(isTomorrow);
 
 type AvailableDateProps = {
   nearestDate: Date | undefined;
   timeMarks: string[];
 };
+const TABLET_CONTROL_MARK = 768;
 
-let previewNumber = window.innerWidth >= 768 ? 6 : 3;
+const getTimeMarkNumber = (): number => {
+  const markNumber = window.innerWidth <= 975 ? Math.floor(window.innerWidth / 170) - 1 : 5;
+  return markNumber;
+};
+
+let previewNumber = window.innerWidth >= TABLET_CONTROL_MARK ? getTimeMarkNumber() : 3;
 
 const getNearestDay = (nearestDate: Date | undefined) => {
-  // console.log(nearestDate);
-  if (dayjs().isToday()) {
+  if (dayjs(nearestDate).isToday()) {
     return ('сегодня');
-  } else if (dayjs().isTomorrow()) {
+  } else if (dayjs(nearestDate).isTomorrow()) {
     return ('завтра');
   }
   return ('');
@@ -25,7 +31,7 @@ const getNearestDay = (nearestDate: Date | undefined) => {
 
 function AvailableDate ({nearestDate, timeMarks}: AvailableDateProps): JSX.Element {
   const changeTimeMarkNumber = () => {
-    previewNumber = window.innerWidth >= 768 ? 6 : 3;
+    previewNumber = window.innerWidth >= TABLET_CONTROL_MARK ? getTimeMarkNumber() : 3;
     setTimeMarksNumber(previewNumber);
   };
 
@@ -34,7 +40,7 @@ function AvailableDate ({nearestDate, timeMarks}: AvailableDateProps): JSX.Eleme
   const [timeMarksNumber, setTimeMarksNumber] = useState<number>(previewNumber);
 
   return (
-    <div className="nearest card__features-item">
+    <li className="card__features-item nearest">
       <span className="nearest__text">
         {`Ближайший рейс: ${getNearestDay(nearestDate)}`}
       </span>
@@ -44,18 +50,21 @@ function AvailableDate ({nearestDate, timeMarks}: AvailableDateProps): JSX.Eleme
             <a className="nearest__time-link" href="/">{time}</a>
           </li>
         ))}
-        <button
+        <li
           className={`
             nearest__time-item
-            nearest__time-item--more
             ${timeMarks.length <= previewNumber ? 'nearest__time-item--display' : ''}
           `}
-          onClick={() => setTimeMarksNumber(timeMarksNumber !== timeMarks.length ? timeMarks.length : previewNumber)}
         >
-          {timeMarksNumber !== timeMarks.length ? 'ещё...' : 'Х'}
-        </button>
+          <button
+            className="nearest__more"
+            onClick={() => setTimeMarksNumber(timeMarksNumber !== timeMarks.length ? timeMarks.length : previewNumber)}
+          >
+            {timeMarksNumber !== timeMarks.length ? 'ещё...' : 'Х'}
+          </button>
+        </li>
       </ul>
-    </div>
+    </li>
   );
 }
 
