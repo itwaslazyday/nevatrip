@@ -1,0 +1,45 @@
+.schedule__wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 30px;
+  border: 1px solid var(--color-border-grey);
+  border-radius: 16px;
+  font-size: 16px;
+}
+
+.basic-button {
+  border: 1px solid var(--color-border-grey);
+  background-color: #FBEC5D;
+  border-radius: 4px;
+  font-family: inherit;;
+  font-size: inherit;
+  padding: 10px;
+  cursor: pointer;
+  text-align: center;
+  margin-top: 15px;
+}
+
+.basic-button:hover {
+  background-color: var(--color-checkmark-yellow);
+}
+
+.basic-button:active {
+  opacity: 0.7;
+}
+
+.schedule__output {
+  margin: 0;
+  border: 1px solid var(--color-border-grey);
+  border-radius: 4px;
+  padding: 10px;
+  font-size: 14px;
+  min-height: 7em;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+@media (min-width: 768px) {
+  .schedule__wrapper {
+    max-width: var(--tablet-width);
+  }
+}

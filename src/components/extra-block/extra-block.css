@@ -1,0 +1,30 @@
+.extra {
+  background: url(../../../public/img/extra-background@1x.jpeg) center no-repeat;
+  background-size: cover;
+}
+
+.extra__list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  padding: 30px 25px;
+  margin: 0;
+  backdrop-filter: blur(2px);
+}
+
+.extra__link {
+  width: 130px;
+  font-weight: 600;
+}
+
+@media (min-width: 768px) {
+  .extra__list {
+    padding: 50px 25px;
+    flex-direction: row;
+    justify-content: center;
+    flex-grow: 1;
+    gap: 10%;
+  }
+}

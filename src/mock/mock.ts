@@ -1,4 +1,5 @@
-import { Card } from 'types/types';
+import { Card, ScheduleData } from 'types/types';
+import dayjs from 'dayjs';
 
 const currentDate = new Date();
 const nextDate = new Date(currentDate);
@@ -55,5 +56,35 @@ const cards: Card[] = [
     priceOffline: 1000
   },
 ];
+const currentYear = currentDate.getFullYear();
+const currentMonth = currentDate.getMonth();
+const currentDay = currentDate.getDate();
+const fullCurrentDate = `${currentYear}-${currentMonth}-${currentDay}`;
 
-export {cards};
+
+const scheduleData: ScheduleData = {
+  scheduleTimeTo: [
+    `${fullCurrentDate}T18:00:00.000`,
+    `${fullCurrentDate}T18:30:00.000`,
+    `${fullCurrentDate}T18:45:00.000`,
+    `${fullCurrentDate}T19:00:00.000`,
+    `${fullCurrentDate}T19:15:00.000`,
+    `${fullCurrentDate}T21:00:00.000`,
+  ],
+  scheduleTimeBack: [
+    `${fullCurrentDate}T18:30:00.000`,
+    `${fullCurrentDate}T18:45:00.000`,
+    `${fullCurrentDate}T19:00:00.000`,
+    `${fullCurrentDate}T19:15:00.000`,
+    `${fullCurrentDate}T19:35:00.000`,
+    `${fullCurrentDate}T21:50:00.000`,
+    `${fullCurrentDate}T21:55:00.000`
+  ],
+  scheduleRoute: {
+    ab: 'Из A в Б',
+    ba: 'Из Б в A',
+    aba: 'Из A в Б и обратно в А'
+  }
+};
+
+export {cards, scheduleData};

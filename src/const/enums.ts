@@ -1,6 +1,7 @@
 enum AppRoute {
   Main = '/',
-  NotFound = '*'
+  Tickets = '/tickets',
+  Schedule = '/schedule'
 }
 
 export {AppRoute};

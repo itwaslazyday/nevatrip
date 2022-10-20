@@ -12,4 +12,21 @@ type Card = {
   priceOffline?: number | string;
 };
 
-export type {Card};
+type ScheduleData = {
+  scheduleRoute: {
+    [index: string]: string;
+  }
+  scheduleTimeTo: string[];
+  scheduleTimeBack: string[];
+}
+
+type FormState = {
+  route: string;
+  timeTo: string;
+  timeBack: string;
+  availableBackTimes: string[];
+  selected: boolean;
+  ticketsNumber: number;
+}
+
+export type {Card, ScheduleData, FormState};
