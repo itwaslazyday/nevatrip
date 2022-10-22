@@ -1,0 +1,9 @@
+.tickets__link {
+  background-color: #FBEC5D;
+}
+
+.tickets__remark {
+  margin: 0;
+  line-height: 10px;
+  font-size: 10px;
+}

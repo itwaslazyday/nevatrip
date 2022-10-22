@@ -3,6 +3,7 @@ import {BrowserRouter as Router} from 'react-router-dom';
 import {AppRoute} from 'const/enums';
 import Main from 'pages/main/main-page';
 import SchedulePage from 'pages/schedule-page/schedule-page';
+import TicketsPage from 'pages/tickets-page/tickets-page';
 
 function App(): JSX.Element {
   return (
@@ -14,7 +15,7 @@ function App(): JSX.Element {
         />
         <Route
           path={AppRoute.Tickets}
-          element={<Main />}
+          element={<TicketsPage />}
         />
         <Route
           path={AppRoute.Schedule}

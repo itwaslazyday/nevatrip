@@ -32,7 +32,7 @@ function ScheduleForm ({handleFormSubmit}: ScheduleFormProps): JSX.Element {
 
   return (
     <form className="schedule__form" action="" method="post" onSubmit={(evt) => handleFormSubmit(evt, formState)}>
-      <label className="schedule__label" htmlFor="route">Направление поездки:</label>
+      <label className="schedule__label" htmlFor="route">Выберите направление поездки:</label>
       <select
         className="schedule__select basic-field"
         name="route"
@@ -46,7 +46,7 @@ function ScheduleForm ({handleFormSubmit}: ScheduleFormProps): JSX.Element {
           </option>)
         )}
       </select>
-      <label className="schedule__label" htmlFor="timeTo">Время отправления туда:</label>
+      <label className="schedule__label" htmlFor="timeTo">Время отправления:</label>
       <select
         className="schedule__select basic-field"
         name="timeTo"
@@ -63,7 +63,7 @@ function ScheduleForm ({handleFormSubmit}: ScheduleFormProps): JSX.Element {
         )}
       </select>
       <label
-        className={`schedule__label ${formState.route === 'aba' ? '' : 'schedule__label--opacity'}`}
+        className={`schedule__label ${formState.route === 'aba' ? '' : 'schedule__label--display'}`}
         htmlFor="timeBack"
       >
         Время отправления обратно:
@@ -73,7 +73,7 @@ function ScheduleForm ({handleFormSubmit}: ScheduleFormProps): JSX.Element {
         name="timeBack"
         id="timeBack"
         onChange={(evt) => setFormState({...formState, timeBack: evt.target.value, selected: true})}
-        disabled={formState.route !== 'aba'}
+        hidden={formState.route !== 'aba'}
       >
         {formState.availableBackTimes.map((time) => (
           <option

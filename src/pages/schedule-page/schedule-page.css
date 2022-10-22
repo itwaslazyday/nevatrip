@@ -1,4 +1,4 @@
-.schedule__wrapper {
+.form-wrapper {
   display: flex;
   flex-direction: column;
   gap: 15px;
@@ -9,8 +9,9 @@
 }
 
 .basic-button {
+  display: block;
   border: 1px solid var(--color-border-grey);
-  background-color: #FBEC5D;
+  background-color: #F2F2F2;
   border-radius: 4px;
   font-family: inherit;;
   font-size: inherit;
@@ -20,7 +21,7 @@
   margin-top: 15px;
 }
 
-.basic-button:hover {
+.basic-button:not([disabled]):hover {
   background-color: var(--color-checkmark-yellow);
 }
 
@@ -38,8 +39,12 @@
   color: rgba(0, 0, 0, 0.6);
 }
 
+.schedule__link {
+  background-color: #FBEC5D;
+}
+
 @media (min-width: 768px) {
-  .schedule__wrapper {
+  .form-wrapper {
     max-width: var(--tablet-width);
   }
 }

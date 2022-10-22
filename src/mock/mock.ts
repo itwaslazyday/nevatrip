@@ -1,5 +1,4 @@
-import { Card, ScheduleData } from 'types/types';
-import dayjs from 'dayjs';
+import { Card, ScheduleData, TicketsData } from 'types/types';
 
 const currentDate = new Date();
 const nextDate = new Date(currentDate);
@@ -87,4 +86,27 @@ const scheduleData: ScheduleData = {
   }
 };
 
-export {cards, scheduleData};
+const ticketsData: TicketsData = [
+  {
+    type: 'adult',
+    price: 1000,
+    title: 'Взрослый'
+  },
+  {
+    type: 'child',
+    price: 700,
+    title: 'Детский'
+  },
+  {
+    type: 'social',
+    price: 600,
+    title: 'Социальный'
+  },
+  {
+    type: 'special',
+    price: 500,
+    title: 'Льготный'
+  }
+];
+
+export {cards, scheduleData, ticketsData};

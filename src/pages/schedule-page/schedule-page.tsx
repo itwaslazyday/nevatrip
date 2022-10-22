@@ -17,7 +17,7 @@ function SchedulePage (): JSX.Element {
   return (
     <section className='schedule'>
       <h2 className='visually-hidden'>Расписание и стоимость отправлений</h2>
-      <div className='schedule__wrapper container'>
+      <div className='container form-wrapper'>
         <ScheduleForm handleFormSubmit={handleFormSubmit}/>
         <Output output={outputState}/>
         <Link className="schedule__link basic-button" to={AppRoute.Main}>Вернуться на главную</Link>

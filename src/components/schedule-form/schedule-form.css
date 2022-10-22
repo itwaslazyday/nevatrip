@@ -11,8 +11,8 @@
   font-weight: 600;
 }
 
-.schedule__label--opacity {
-  opacity: 0.4;
+.schedule__label--display {
+  display: none;
 }
 
 .basic-field {
@@ -36,6 +36,7 @@
 
 .schedule__select[disabled] {
   opacity: 0.4;
+  cursor: none;
 }
 
 .schedule__input {

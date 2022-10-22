@@ -18,7 +18,7 @@ type ScheduleData = {
   }
   scheduleTimeTo: string[];
   scheduleTimeBack: string[];
-}
+};
 
 type FormState = {
   route: string;
@@ -27,6 +27,43 @@ type FormState = {
   availableBackTimes: string[];
   selected: boolean;
   ticketsNumber: number;
-}
+};
 
-export type {Card, ScheduleData, FormState};
+type TicketsData = {
+    type: string;
+    price: number;
+    title: string;
+}[];
+
+type TicketsFormState = {
+  [index: string]: number | Date | {price: number; quantity: number; barcodes: number[]};
+
+  // adult: {
+  //   price: number;
+  //   quantity: number;
+  //   barcodes: number[];
+  // };
+  // child: {
+  //   price: number;
+  //   quantity: number;
+  //   barcodes: number[];
+  // };
+  // social: {
+  //   price: number;
+  //   quantity: number;
+  //   barcodes: number[];
+  // };
+  // special: {
+  //   price: number;
+  //   quantity: number;
+  //   barcodes: number[];
+  // };
+  // id: number;
+  // eventId: number;
+  // eventDate: Date;
+  // userId: number;
+  // equialPrice: number;
+  // created: Date;
+};
+
+export type {Card, ScheduleData, FormState, TicketsData, TicketsFormState};
